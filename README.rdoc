@@ -1,0 +1,31 @@
+= jen
+
+* {Homepage}[https://rubygems.org/gems/jen]
+* {Documentation}[http://rubydoc.info/gems/jen/frames]
+* {Email}[mailto:jweissman1986 at gmail.com]
+
+== Description
+
+TODO: Description
+
+== Features
+
+== Examples
+
+  require 'jen'
+
+== Requirements
+
+== Install
+
+  $ gem install jen
+
+== Synopsis
+
+  $ jen
+
+== Copyright
+
+Copyright (c) 2013 Joseph Weissman
+
+See LICENSE.txt for details.
