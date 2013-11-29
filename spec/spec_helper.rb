@@ -1,4 +1,6 @@
 require 'rspec'
-require 'jen/version'
-
+require 'pry'
+require 'jen'
 include Jen
+require 'spec_fixtures'
+
