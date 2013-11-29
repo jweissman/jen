@@ -16,7 +16,7 @@ module Jen
 	end
 
 	def register(generator)
-	  self.registry[generator.factory_name] = generator
+	  self.registry[generator.identifier] = generator
 	end
 
 	def detect(meth)

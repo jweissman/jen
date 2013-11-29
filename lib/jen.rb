@@ -3,6 +3,8 @@ require 'securerandom'
 
 require 'jen/version'
 
+require 'jen/abstract_component'
+
 require 'jen/extensions'
 require 'jen/attribute'
 require 'jen/reflect'

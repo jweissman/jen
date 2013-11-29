@@ -6,9 +6,12 @@
 
 == Description
 
-TODO: Description
+Jen is a lightweight Factory framework for Ruby.
 
 == Features
+
+Supports generation of objects by inferring class names from symbols (otherwise a class can be specified.)
+Supports generation of collections and invocation of other factories.
 
 == Examples
 

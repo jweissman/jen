@@ -1,19 +1,14 @@
 module Jen
   module Factory
-    class Base
+    class Base < AbstractComponent
       include Registry
       include Construction
 
-      attr_accessor :factory_name, :factory_options, :block
-
       def initialize(meth,opts={},&blk)
-	@factory_name     = meth
-	@factory_options  = opts 
-	@block    = blk
+	super(meth,opts,&blk)
 
-	# hook into registry and construction modules
 	register!
-        instance_eval(&(@block))
+	prepare_for_fabrication!
       end
     end
   end

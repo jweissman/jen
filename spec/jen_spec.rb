@@ -22,17 +22,24 @@ describe Jen do
   end
 
   describe 'complex attributes' do
+    subject { generate :city } 
+
+    describe 'with a basic trait' do
+      its('mayor') { should be_a(Person) }
+      its('mayor.job') { should eql('mayor') }
+    end
+
     context 'collections' do
-      subject { generate :city }
       describe 'a simple collection' do
 	its('people.first') { should be_a(Person) }
 	its('people.count') { should eql(POPULATION) }
       end
     end
     
-    context 'with traits' do
+    context 'with traits/aspects' do
       let :person do
-        generate :person
+        # generate :person
+	subject.people.first
       end
       
       it 'should have a job' do
