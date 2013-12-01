@@ -2,7 +2,8 @@ module Jen
   # a lot of our classes have this structure, might as well encapsulate it
   class AbstractComponent
     attr_accessor :component_name, :component_options, :component_block
-    def initialize(component_name,component_options={},&component_block)
+
+    def initialize(component_name=nil, component_options={}, &component_block)
       @component_name    = component_name
       @component_options = component_options
       @component_block   = component_block

@@ -11,7 +11,9 @@ require 'jen/reflect'
 
 require 'jen/factory/registry'
 require 'jen/factory/construction'
+require 'jen/factory/traits'
 require 'jen/factory/base'
+require 'jen/factory/aspect'
 
 require 'jen/dsl'
 
@@ -19,5 +21,3 @@ module Jen
   include Reflect
   include DSL
 end
-
-# include Jen::DSL

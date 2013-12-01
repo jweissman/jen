@@ -3,7 +3,7 @@ module Jen
     attr_accessor :count	# number of sub-entities to generate 
     attr_accessor :counter	# this entities index
 
-    def initialize(name,opts={},&block)
+    def initialize(name=nil,opts={},&block)
       super(name,opts,&block)
 
       self.count   = delete_option(:count)   { 1 }

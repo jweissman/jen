@@ -1,4 +1,5 @@
 require 'spec_helper'
+require 'shared/spec_fixtures'
 require 'jen'
 
 describe Jen do

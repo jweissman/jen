@@ -6,18 +6,52 @@
 
 == Description
 
-Jen is a lightweight Factory framework for Ruby.
+Jen loves your data!
+
+Jen is a lightweight factory framework for pure Ruby.
 
 == Features
 
-Supports generation of objects by inferring class names from symbols (otherwise a class can be specified.)
-Supports generation of collections and invocation of other factories.
+- Generation of objects and attributes
+- Invocation of other factories
+- Generation of collections 
+
+== TODO
+
+- Support traits
+
+== Thoughts
+
+What other services could an active data factory help provide...?
+
+One idea is to have a jen app that actually eagerly builds a whole
+bunch of things to serve to client apps (maybe via DrB) on demand.
 
 == Examples
 
   require 'jen'
 
+  # Let's say you've got a class with attributes
+  class Person
+    attr_accessor :name, :age
+  end
+
+  # Just bring in Jen's lingo to get started
+  include Jen::DSL
+
+  factory :person do
+    name   { 'John Doe' }
+    age    { (0..120).to_a.sample }
+  end
+
+  generate :person
+  # => Person(name: 'John Doe', age: ~60) or whatever
+
 == Requirements
+
+== Warnings
+
+Currently for 'pure Ruby'; that is, it has *not* really been evaluated yet how well it might play with the various frameworks, ORMs, etc. (Presumably that should be a straightforward matter of extension; and DataMapper integration is pretty high on my own punchlist here, so anyway, all that is hopefully to come.)
 
 == Install
 
@@ -26,6 +60,8 @@ Supports generation of collections and invocation of other factories.
 == Synopsis
 
   $ jen
+
+
 
 == Copyright
 

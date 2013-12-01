@@ -7,16 +7,18 @@ module Jen
       end
       
       def register!
-	self.class.register self
+	self.class.register(self) if delete_option(:register) { true }
       end
 
       module ClassMethods
+	attr_accessor :factory_registry
+
 	def registry
-	  @registry ||= {}
+	  @factory_registry ||= {}
 	end
 
 	def register(generator)
-	  self.registry[generator.identifier] = generator
+	  registry[generator.identifier] = generator
 	end
 
 	def detect(meth)

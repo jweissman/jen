@@ -4,9 +4,10 @@ module Jen
       include Registry
       include Construction
 
-      def initialize(meth,opts={},&blk)
-	super(meth,opts,&blk)
+      # include Traits
 
+      def initialize(meth=nil,opts={},&blk)
+	super(meth,opts,&blk)
 	register!
 	prepare_for_fabrication!
       end
