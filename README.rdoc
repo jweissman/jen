@@ -1,24 +1,34 @@
 = jen
 
+Jen loves your data!
+
+Jen is a lightweight factory framework for pure Ruby.
+
+Somehow it didn't seem easy to use other factory frameworks with plain-old Ruby objects --
+which in a way I understand, as wrapping around ORM weirdness is perhaps THE use case which 
+made the factory pattern so urgent/interesting over the last few years; the other major thing
+I've been thinking about is using factories outside of tests; using the factory pattern to
+help unify/cleanse complex initialization/state-handling logic. In other words: factories as a
+little language about your kingdom of nouns; the language they use to talk about themselves, a
+language which can be morphed into the guiding metaphors that structure your development.
+
+All that is fairly ambitious; at the moment, Jen is ultimately not much more than a structured wrapper around a series of lambdas. I hope there will be eventually some neat things in it -- I'll be carefully studying the work done on excellent/inspirational projects like Fabricator and FactoryGirl. In particular, one early goal will be to provide a layer for ORM support; and DSL support for things like traits.
+
+Factories specify the organization of an object kingdom. One thought I'd like to explore here is bridging these kingdoms together -- so hopefully eventually supporting something like an evented factory-as-a-service. There is a binstub in the project for an executable called 'jen' and eventually I'd like to think about making this a tiny factory service.
+
+At any rate, all this to say that the project is still very much in-development and is in a lot ways a kata or exercise.
+
 * {Homepage}[https://rubygems.org/gems/jen]
 * {Documentation}[http://rubydoc.info/gems/jen/frames]
 * {Email}[mailto:jweissman1986 at gmail.com]
 
 == Description
 
-Jen loves your data!
-
-Jen is a lightweight factory framework for pure Ruby.
 
 == Features
 
-- Generation of objects and attributes
-- Invocation of other factories
-- Generation of collections 
-
-== TODO
-
-- Support traits
+- Generation of PORO objects with attributes set according to factory specifications
+- Invocation of other factories, and for collections, implicitly supported in specification
 
 == Thoughts
 
