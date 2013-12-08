@@ -6,14 +6,14 @@ module Jen
       # by adding an 'aspectual' parameter of some kind
       # which is really just like a sub-factory
 
-      def aspects
-        @aspects ||= []
-      end
+      # def aspects
+      #   @aspects ||= []
+      # end
 
-      def trait(name,opts={},&blk)
-        puts "--- creating trait #{name}"
-        self.aspects << Aspect.new(name,opts={},&blk)
-      end
+      # def trait(name,opts={},&blk)
+      #   logger.debug "--- creating trait #{name}"
+      #   self.aspects << Aspect.new(name,opts={},&blk)
+      # end
     end
   end
 end

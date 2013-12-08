@@ -1,28 +1,46 @@
 module Jen
   # a lot of our classes have this structure, might as well encapsulate it
   class AbstractComponent
-    attr_accessor :component_name, :component_options, :component_block
+    # attr_accessor :name # , :options # , :block
+    def initialize(name=nil, options={}, *args, &block)
+      @name     = name || :anonymous_component
+      @options  = options
+      @block    = block
 
-    def initialize(component_name=nil, component_options={}, &component_block)
-      @component_name    = component_name
-      @component_options = component_options
-      @component_block   = component_block
+      logger.debug "----- NEW ABSTRACT COMPONENT '#{self.identifier}'"
+      @value ||= nil
     end
 
     def identifier
-      @component_name
-    end
-    
-    def delete_option(k,&blk)
-      @component_options.delete(k,&blk)
+      @name
     end
 
-    def option_for(k)
-      @component_options && @component_options[k]
+    def value
+      @value ||= nil
+      execute!
+      @value
     end
 
     def closure
-      @component_block ||= proc {}
+      @block
+    end
+
+    def options
+      @options
+    end
+  
+    protected
+    def option_for(k)
+      @options[k] #  && @component_options[k]
+    end
+
+    def delete_option(k,&blk)
+      @options.delete(k,&blk)
+    end
+
+    def execute!(opts={})
+      closure_parameters = self.options.merge(opts)
+      @value = instance_exec closure_parameters, &closure
     end
   end
 end
